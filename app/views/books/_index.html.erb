@@ -5,8 +5,6 @@
       <th>Title</th>
       <th>Opinion</th>
       <th colspan="3"></th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -21,16 +19,17 @@
         <% if book.favorited_by?(current_user) %>
           <td>
             <%= link_to book_favorites_path(book), method: :delete do %>
-              ♥<%= book.favorites.count %>
+              <span class="favolite">♥<%= book.favorites.count %></span>
             <% end %>
           </td>
         <% else %>
           <td>
             <%= link_to book_favorites_path(book), method: :post do %>
-              ♡<%= book.favorites.count %>
+              <span class="destroy-favolite">♥<%= book.favorites.count %></span>
             <% end %>
           </td>
         <% end %>
+        <td>コメント数:<%= book.book_comments.count %></td>
       </tr>
     <% end %>
   </tbody>
