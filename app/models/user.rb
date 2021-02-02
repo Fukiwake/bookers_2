@@ -12,18 +12,18 @@ class User < ApplicationRecord
   has_many :follower_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
   has_many :followers, through: :follower_relationships, source: :follower
 
-  def following?(other_user)
-    following.include?(other_user)
+  def following?(user)
+  following.include?(user)
   end
 
-  def follow(other_user)
-    following_relationships.create(followed_id: other_user.id)
+  def follow(user_id)
+    following_relationships.create(followed_id: user_id)
   end
 
-  def unfollow(other_user)
-    following_relationships.find_by(followed_id: other_user.id).destroy
+  def unfollow(user_id)
+    following_relationships.find_by(followed_id: user_id).destroy
   end
-
+  
   attachment :profile_image, destroy: false
 
   validates :name, length: {maximum: 20, minimum: 2}, uniqueness: true
