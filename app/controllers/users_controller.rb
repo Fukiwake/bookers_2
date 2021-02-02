@@ -13,6 +13,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:id])
   end
 
 
@@ -22,6 +23,16 @@ class UsersController < ApplicationController
     else
       render "edit"
     end
+  end
+  
+  def following
+    @user = User.find(params[:id])
+    @users = @user.following.all
+  end
+  
+  def followers
+    @user = User.find(params[:id])
+    @users = @user.followers.all
   end
 
   private

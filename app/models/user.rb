@@ -7,6 +7,23 @@ class User < ApplicationRecord
   has_many :books
   has_many :favorites, dependent: :destroy
   has_many :book_comments, dependent: :destroy
+  has_many :following_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
+  has_many :following, through: :following_relationships, source: :followed
+  has_many :follower_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
+  has_many :followers, through: :follower_relationships, source: :follower
+
+  def following?(other_user)
+    following.include?(other_user)
+  end
+
+  def follow(other_user)
+    following_relationships.create(followed_id: other_user.id)
+  end
+
+  def unfollow(other_user)
+    following_relationships.find_by(followed_id: other_user.id).destroy
+  end
+
   attachment :profile_image, destroy: false
 
   validates :name, length: {maximum: 20, minimum: 2}, uniqueness: true
