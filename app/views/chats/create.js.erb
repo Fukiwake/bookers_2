@@ -1,2 +1,2 @@
-$("#chat_area").html("<%= j(render "chat_area")%>")
-$("#chat_form").html("<%= j(render "chat_form")%>")
+$('#chat_area').append("<%= @chat.message %>");
+$('input[type=text]').val("")

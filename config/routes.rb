@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :book_comments, only: [:create, :destroy]
     resource :favorites, only: [:create, :destroy]
   end
-  resources :rooms, only: [:create, :show]
+  get 'chat/:id' => 'chats#show', as: 'chat'
   resources :chats, only: [:create]
   root 'homes#top'
   get 'home/about' => 'homes#about'

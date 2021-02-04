@@ -13,6 +13,7 @@ class User < ApplicationRecord
   has_many :followers, through: :follower_relationships, source: :follower
   has_many :chats
   has_many :entries
+  has_many :rooms, through: :entries
 
   def following?(user)
   following.include?(user)
