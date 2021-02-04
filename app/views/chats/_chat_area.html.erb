@@ -1,0 +1,5 @@
+<% if @chats.present? %>
+  <% @chats.each do |chat| %>
+    <%= chat.message %>
+  <% end %>
+<% end %>
