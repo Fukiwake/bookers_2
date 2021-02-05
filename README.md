@@ -7,7 +7,7 @@
 # DEMO
  
 ![スクリーンショット 2021-02-06 083112](https://user-images.githubusercontent.com/75518740/107099693-b863f700-6855-11eb-8c09-a05e917fd864.jpg)
- 
+![GIF 2021-02-06 08-44-19](https://user-images.githubusercontent.com/75518740/107100430-ac793480-6857-11eb-91a1-3b3fc91e88fe.gif)
 # Features
  
 "hoge"のセールスポイントや差別化などを説明する
