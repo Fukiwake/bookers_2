@@ -16,7 +16,7 @@ class User < ApplicationRecord
   has_many :rooms, through: :entries
 
   def following?(user)
-  following.include?(user)
+    following.include?(user)
   end
 
   def follow(user_id)
@@ -40,8 +40,8 @@ class User < ApplicationRecord
 
   attachment :profile_image, destroy: false
 
-  validates :name, length: {maximum: 20, minimum: 2}, uniqueness: true
-  validates :introduction, length: {maximum: 50}
+  validates :name, length: { maximum: 20, minimum: 2 }, uniqueness: true
+  validates :introduction, length: { maximum: 50 }
 
   def self.looks(searches, words)
     if searches == "perfect_match"

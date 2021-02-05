@@ -1,5 +1,4 @@
 class ChatsController < ApplicationController
-
   def show
     @user = User.find(params[:id])
     rooms = current_user.entries.pluck(:room_id)
