@@ -5,55 +5,38 @@
  
 
 # DEMO
+
+お気に入りの本を投稿しましょう。
+
+
  
 ![スクリーンショット 2021-02-06 083112](https://user-images.githubusercontent.com/75518740/107099693-b863f700-6855-11eb-8c09-a05e917fd864.jpg)
-![GIF 2021-02-06 08-44-19](https://user-images.githubusercontent.com/75518740/107100430-ac793480-6857-11eb-91a1-3b3fc91e88fe.gif)
+
 # Features
  
-"hoge"のセールスポイントや差別化などを説明する
- 
+他のユーザーをフォローしたり、投稿された本をいいねすることもできます。
+友達とのチャットでコミュニケーションとりましょう。
+ ![GIF 2021-02-06 08-44-19](https://user-images.githubusercontent.com/75518740/107100430-ac793480-6857-11eb-91a1-3b3fc91e88fe.gif)
 # Requirement
  
 "hoge"を動かすのに必要なライブラリなどを列挙する
  
-* huga 3.5.2
-* hogehuga 1.0.2
- 
-# Installation
- 
-Requirementで列挙したライブラリなどのインストール方法を説明する
- 
-```bash
-pip install huga_package
-```
+* ruby-2.6.3
  
 # Usage
  
 DEMOの実行方法など、"hoge"の基本的な使い方を説明する
  
 ```bash
-git clone https://github.com/hoge/~
-cd examples
-python demo.py
+$ git clone https://github.com/Fukiwake/bookers_2
+$ cd bookers2
 ```
  
-# Note
- 
-注意点などがあれば書く
  
 # Author
  
-作成情報を列挙する
  
-* 作成者
-* 所属
-* E-mail
+* fukiwake
+* test@gmail.com
  
 # License
-ライセンスを明示する
- 
-"hoge" is under [MIT license](https://en.wikipedia.org/wiki/MIT_License).
- 
-社内向けなら社外秘であることを明示してる
- 
-"hoge" is Confidential.
