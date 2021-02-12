@@ -1,0 +1,23 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Bookers2-debug
+    = csrf_meta_tags
+    = csp_meta_tag
+    %meta{:content => "width=device-width, initial-scale=1, maximum-scale=1", :name => "viewport"}/
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    = render 'layouts/header'
+    %main
+      %p#notice= notice
+      - if user_signed_in?
+        .d-flex.justify-content-center
+          = form_with url: search_path, method: :get, local: :true do |f|
+            = f.text_field :word
+            = f.select :range, [["User"], ["Book"]]
+            = f.select :search, [["完全一致","perfect_match"], ["部分一致","partial_match"], ["前方一致","forward_match"], ["後方一致","backward_match"]]
+            = f.submit "検索"
+      = yield
+    = render 'layouts/footer'

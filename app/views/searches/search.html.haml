@@ -1,0 +1,8 @@
+- if @range == "User"
+  %h1
+    Users search for "#{@word}"
+  = render 'users/index',users: @users
+- else
+  %h1
+    Books search for "#{@word}"
+  = render 'books/index', books: @books

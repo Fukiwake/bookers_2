@@ -1,0 +1,10 @@
+%h1
+  = @user.name
+  さんとのチャット
+#chat_area
+  - @chats.each do |chat|
+    = chat.message
+#chat_form
+  = form_with model: @chat, remote: true do |f|
+    = f.text_field :message
+    = f.hidden_field :room_id
